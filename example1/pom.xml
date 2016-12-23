@@ -7,9 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>servicespace Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
 	<properties>
 		<swagger2markup.version>1.1.1</swagger2markup.version>
+		<start-class>com.efx.ic.service.RiskDecisioningService</start-class>
 	</properties>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -74,28 +77,33 @@
 						<apiSources>
 							<apiSource>
 								<springmvc>false</springmvc>
-								<locations>com.efx.ic.service</locations>
-								<schemes>http,https</schemes>
-								<host>www.host22:port</host>
+								<locations>
+									<location>com.efx.ic.service</location>
+								</locations>
+								<schemes>
+									<scheme>http</scheme>
+									<scheme>https</scheme>
+								</schemes>
+								<host>www.localhost:8998</host>
 								<basePath>/v1</basePath>
 								<info>
 									<title>Swagger spec for IC REST API</title>
 									<version>v1</version>
 									<description>This is a sample spec for IC REST API</description>
 									<termsOfService>
-										http://www.equifax.com/terms-and-conditions
+										https://www.equifax.com/terms-and-conditions
 									</termsOfService>
 									<contact>
 										<email>stakeholder(@)equifax.com</email>
 										<name>stakeholder</name>
-										<url>http://www.equifax.com</url>
+										<url>https://www.equifax.com</url>
 									</contact>
 									<license>
 										<url>http://www.equifax.com/licenses/LICENSE-2.0.html</url>
 										<name>Company Licence</name>
 									</license>
 								</info>
-								<swaggerDirectory>src/main/webapp1/</swaggerDirectory>
+								<swaggerDirectory>src/main/webapp/</swaggerDirectory>
 							</apiSource>
 						</apiSources>
 					</configuration>
